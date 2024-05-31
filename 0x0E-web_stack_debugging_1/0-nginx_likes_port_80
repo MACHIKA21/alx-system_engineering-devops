@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Start Nginx server
+nginx
+# Generate a simple HTML page
+echo "<html><head><title>My Web Page</title></head><body><h1>Hello, World!</h1></body></html>" > /usr/share/nginx/html/index.html
+# Return HTTP 200 status code
+echo -en "HTTP/1.1 200 OK\r\n\r\n" | nc -q 0 -l 80
